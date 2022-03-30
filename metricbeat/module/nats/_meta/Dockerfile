@@ -3,7 +3,7 @@ FROM nats:$NATS_VERSION
 
 # create an enhanced container with nc command available since nats is based
 # on scratch image making healthcheck impossible
-FROM alpine:latest
+FROM alpine:3.15.3
 COPY --from=0 /gnatsd /gnatsd
 COPY --from=0 gnatsd.conf gnatsd.conf
 # Expose client, management, and cluster ports
